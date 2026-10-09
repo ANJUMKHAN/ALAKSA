@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "davinci-resolve-studio-mcp"
+version = "0.1.0"
+description = "MCP server that drives DaVinci Resolve Studio through its scripting API"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["mcp>=1.2,<2"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+davinci-resolve-studio-mcp = "davinci_resolve_mcp.server:main"
+
+[tool.setuptools]
+packages = ["davinci_resolve_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
